@@ -1,3 +1,13 @@
+def sum(number):
+    n_list = []
+    number=str(number)
+    s = 0
+    for i in number:
+        n_list.append(i)
+    for i in n_list:
+        ii = int(i)
+        s += ii
+    return s
 def loaddata(file):
     content=open(file)
     data=list(map(str.strip, content.readlines()))
@@ -35,4 +45,14 @@ def zadanie2():
         if is_prime(int(numbers[i])) and is_prime(int(numbers1[i])):
             primes.append(numbers[i])
     print(primes)
-zadanie2()
+def zadanie3():
+    numbers=loaddata("pierwsze.txt")
+    w=[]
+    for number in numbers:
+        s=sum(number)
+        while s>9:
+            s=sum(s)
+        if s==1:
+            w.append(number)
+    print(w)
+zadanie3()
